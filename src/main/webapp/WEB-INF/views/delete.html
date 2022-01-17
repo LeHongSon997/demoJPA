@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Delete student</title>
+</head>
+<body>
+<h1>Student delete</h1>
+<p>
+    <a href="/students">Back to student list</a>
+</p>
+<form th:object="${student}" method="post" enctype="multipart/form-data">
+    <h3>Are you sure</h3>
+    <fielset>
+        <legend>Student information</legend>
+        <table>
+            <tr>
+                <td>Name: </td>
+                <td th:text="*{name}"></td>
+            </tr>
+            <tr>
+                <td>Age: </td>
+                <td th:text="*{age}"></td>
+            </tr>
+            <tr>
+                <td>Img: </td>
+                <td > <img th:src="*{img}" height="150" width="200"></td>
+            </tr>
+            <tr>
+                <td>Class: </td>
+                <td th:text="*{classRoom.name}"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Delete product"></td>
+            </tr>
+        </table>
+    </fielset>
+</form>
+</body>
+</html>
